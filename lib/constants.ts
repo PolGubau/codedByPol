@@ -1,8 +1,9 @@
 export const metadata = {
-  title: "Pol Gubau Amores",
+  title: "Coded by Pol",
   description: "Pol Gubau Amores personal website",
   author: {
     name: "Pol",
+    website: "https://polgubau.com",
     fullName: "Pol Gubau Amores",
     picture: "/assets/blog/authors/pol.jpg",
     twitter: "https://twitter.com/aledev_",
@@ -13,7 +14,7 @@ export const metadata = {
     github: "",
   },
 
-  siteUrl: "https://polgubau.com",
+  siteUrl: "https://blog.polgubau.com",
 
   homeOgImage: "/assets/blog/authors/pol.jpg",
 };
