@@ -112,7 +112,7 @@ export default function Post({ data, preview }: Props) {
                   </div>
                 )}
 
-                {text && <PostBody content={text} />}
+                {text && <PostBody content={text} color={author.color} />}
               </div>
             </article>
           </>

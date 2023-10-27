@@ -1,10 +1,14 @@
 type Props = {
   content: string;
+  color?: string;
 };
 
-const PostBody = ({ content }: Props) => {
+const PostBody = ({ content, color = "#fff176" }: Props) => {
   return (
-    <div className={"markdown"} dangerouslySetInnerHTML={{ __html: content }} />
+    <div
+      className={`markdown  `}
+      dangerouslySetInnerHTML={{ __html: content }}
+    />
   );
 };
 
