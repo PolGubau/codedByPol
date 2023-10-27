@@ -5,7 +5,6 @@ import Layout from "../../components/layout/layout";
 import { getAllPosts, getAuthorById } from "../../lib/api";
 import Head from "next/head";
 import Post from "../../interfaces/post";
-import Link from "next/link";
 import Header from "../../components/layout/header";
 import { metadata } from "../../lib/constants";
 
@@ -21,9 +20,7 @@ export default function Index({ allPosts }: Props) {
       </Head>
       <Container>
         <Header />
-        <Link href="/" className="text-blue-500 hover:underline">
-          Go home
-        </Link>
+
         {allPosts.length > 0 && <PostList posts={allPosts} />}
       </Container>
     </Layout>

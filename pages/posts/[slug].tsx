@@ -34,12 +34,12 @@ export default function Post({ post, preview }: Props) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <Link href="/" className="text-blue-500 hover:underline">
-              Go home
-            </Link>
             <article className="mb-32">
               <Head>
                 <title>{title} | CodedByPol </title>
+                <meta property="og:title" content={title} />
+                <meta property="og:description" content={post.excerpt} />
+                <meta property="description" content={post.excerpt} />
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
               <PostHeader

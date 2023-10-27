@@ -9,8 +9,8 @@ type Props = {
 
 const AuthorList = ({ authors, label = "Our Creators" }: Props) => {
   return (
-    <section className="flex gap-8 flex-col">
-      <h1 className="mb-8 text-5xl md:text-6xl font-bold tracking-tighter leading-tight">
+    <section className="flex gap-8 flex-col justify-center md:justify-start">
+      <h1 className="mb-8 text-5xl md:text-6xl font-bold tracking-tighter leading-tight text-center md:text-left pt-4 md:pt-0">
         {label}
       </h1>
 

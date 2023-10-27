@@ -9,6 +9,7 @@ import Author from "../../interfaces/author";
 import { metadata } from "../../lib/constants";
 import AuthorList from "../../components/author-list";
 import Header from "../../components/layout/header";
+import Breadcrumps from "../../components/breadcrumps/Breadcrumps";
 
 type Props = {
   authors: Author[];
@@ -22,9 +23,6 @@ export default function AuthorsPage({ authors = [] }: Props) {
       </Head>
       <Container>
         <Header />
-        <Link href="/" className="text-blue-500 hover:underline">
-          Go home
-        </Link>
 
         {authors.length > 0 && <AuthorList authors={authors} />}
       </Container>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .markdown {
-  @apply text-lg leading-relaxed;
+  @apply leading-relaxed transition-all;
 }
 
 .markdown p,
@@ -14,9 +14,53 @@
 }
 
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  @apply text-3xl mt-12 mb-4 leading-snug bg-yellow-300 p-3 py-1 rounded-xl w-fit;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply text-2xl mt-8 mb-4 leading-snug border-b-2 border-yellow-300  w-fit;
+}
+
+.markdown h4 {
+  @apply text-xl mt-8 mb-4 leading-snug;
+}
+
+.markdown a {
+  @apply text-yellow-600 underline transition-all hover:text-yellow-700;
+}
+
+.markdown ul {
+  @apply list-inside pl-4 list-disc marker:text-yellow-500;
+}
+
+.markdown li {
+  @apply my-2;
+}
+
+.markdown blockquote {
+  @apply border-l-4 border-yellow-300 pl-4;
+}
+
+.markdown img {
+  @apply my-8 rounded-xl shadow-xl;
+}
+
+.markdown table {
+  @apply my-8;
+}
+
+.markdown table th {
+  @apply bg-yellow-300 p-2;
+}
+
+.markdown table td {
+  @apply p-2;
+}
+
+.markdown table tr:nth-child(even) {
+  @apply bg-gray-100;
+}
+
+.markdown table tr:nth-child(odd) {
+  @apply bg-gray-200;
 }

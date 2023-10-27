@@ -39,7 +39,13 @@ const PostPreview = ({
         <DateFormatter dateString={date} />
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <Avatar name={author.data.name} picture={author.data.picture} />
+      <Link
+        as={`/authors/${author.data.id}`}
+        href="/authors/[slug]"
+        aria-label={author.data.name}
+      >
+        <Avatar name={author.data.name} picture={author.data.picture} />
+      </Link>
     </div>
   );
 };

@@ -3,20 +3,14 @@ import ErrorPage from "next/error";
 import Container from "../../components/container";
 import PostBody from "../../components/post/post-body";
 import Header from "../../components/layout/header";
-import PostHeader from "../../components/post/post-header";
 import Layout from "../../components/layout/layout";
-import {
-  getPostBySlug,
-  getAllPosts,
-  getAuthorById,
-  getAllAuthors,
-} from "../../lib/api";
+import { getAuthorById, getAllAuthors } from "../../lib/api";
 import PostTitle from "../../components/post/post-title";
 import Head from "next/head";
 import markdownToHtml from "../../lib/markdownToHtml";
-import type PostType from "../../interfaces/post";
-import Link from "next/link";
 import Author from "../../interfaces/author";
+import { metadata } from "../../lib/constants";
+import Image from "next/image";
 
 type Props = {
   data: {
@@ -44,16 +38,82 @@ export default function Post({ data, preview }: Props) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <Link href="/" className="text-blue-500 hover:underline">
-              Go home
-            </Link>
-            <article className="mb-32">
+            <article className="mb-32 flex flex-col gap-2 w-full">
               <Head>
-                <title>{author.name} | Author from CodedByPol </title>
+                <title>
+                  {author.name} | Author from {metadata.title}
+                </title>
+                <meta property="og:title" content={title} />
+                <meta property="og:description" content={author.mini_bio} />
+                <meta property="description" content={author.mini_bio} />
                 <meta property="og:image" content={author.picture} />
               </Head>
 
-              <h1>{author.name}</h1>
+              <header className="flex w-full h-full md:items-center   justify-between flex-col-reverse mt-4 md:mt-0  md:flex-row">
+                <hgroup className="text-center md:text-left flex-col bg-background z-10 pt-6 md:pt-0">
+                  <h1 className="text-6xl font-bold">{author.name}</h1>
+                  <h4 className="text-xl ">{author.mini_bio}</h4>
+                </hgroup>
+
+                <header
+                  className="relative w-full md:w-36 h-36 rounded-2xl md:rounded-full flex justify-center group md:overflow-hidden mt-16 md:mt-0"
+                  style={{
+                    backgroundColor: author.color,
+                  }}
+                >
+                  <Image
+                    src={author.picture}
+                    alt={author.name}
+                    width={200}
+                    height={200}
+                    className="rounded-none -bottom-5 md:bottom-0 h-50 aspect-square absolute hover:bottom-0 transition-all group-hover:bottom-0 md:group-hover:bottom-0"
+                  />
+                </header>
+              </header>
+
+              <div className="flex gap-2 flex-col md:mt-8">
+                {author.location && (
+                  <div className="flex gap-2 flex-col items-center md:items-start">
+                    <span>{author.location}</span>
+                  </div>
+                )}
+                {author.tags && (
+                  <div className="flex items-center gap-4 mt-8 flex-col md:flex-row">
+                    <h3 className="text-3xl md:text-xl text-center  font-bold md:text-left">
+                      Topics
+                    </h3>
+                    <ul className="flex gap-2 text-center justify-center md:justify-start">
+                      {author.tags.map((tag) => (
+                        <li className="px-2 py-1 rounded-xl bg-slate-200">
+                          #{tag}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {author.techStack && (
+                  <div className="flex items-center gap-4 mt-8 flex-col md:flex-row">
+                    <h3 className="text-3xl md:text-xl text-center  font-bold md:text-left">
+                      Tech Stack
+                    </h3>
+                    <ul className="flex gap-2 text-center justify-center md:justify-start">
+                      {author.techStack.map((tag) => (
+                        <li
+                          className="px-2 py-1 rounded-full "
+                          style={{
+                            backgroundColor: author.color + "70",
+                          }}
+                        >
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {text && <PostBody content={text} />}
+              </div>
             </article>
           </>
         )}
