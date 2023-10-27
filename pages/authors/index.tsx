@@ -2,45 +2,40 @@ import Container from "../../components/container";
 import PostList from "../../components/post-list";
 import Intro from "../../components/hero";
 import Layout from "../../components/layout/layout";
-import { getAllPosts, getAuthorById } from "../../lib/api";
+import { getAllAuthors } from "../../lib/api";
 import Head from "next/head";
-import Post from "../../interfaces/post";
 import Link from "next/link";
-import Header from "../../components/layout/header";
+import Author from "../../interfaces/author";
 import { metadata } from "../../lib/constants";
+import AuthorList from "../../components/author-list";
+import Header from "../../components/layout/header";
 
 type Props = {
-  allPosts: Post[];
+  authors: Author[];
 };
 
-export default function Index({ allPosts }: Props) {
+export default function AuthorsPage({ authors = [] }: Props) {
   return (
     <Layout>
       <Head>
-        <title>{`All Posts | ${metadata.title}`}</title>
+        <title>{`All Authors | ${metadata.title}`}</title>
       </Head>
       <Container>
         <Header />
         <Link href="/" className="text-blue-500 hover:underline">
           Go home
         </Link>
-        {allPosts.length > 0 && <PostList posts={allPosts} />}
+
+        {authors.length > 0 && <AuthorList authors={authors} />}
       </Container>
     </Layout>
   );
 }
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "excerpt",
-  ]);
+  const authors = getAllAuthors();
 
   return {
-    props: { allPosts },
+    props: { authors },
   };
 };

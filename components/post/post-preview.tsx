@@ -9,7 +9,7 @@ type Props = {
   coverImage: string;
   date: string;
   excerpt: string;
-  author: Author;
+  author: { data: Author; text: string };
   slug: string;
 };
 
@@ -39,7 +39,7 @@ const PostPreview = ({
         <DateFormatter dateString={date} />
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <Avatar name={author.name} picture={author.picture} />
+      <Avatar name={author.data.name} picture={author.data.picture} />
     </div>
   );
 };

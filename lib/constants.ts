@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Coded by Pol",
-  description: "Pol Gubau Amores personal website",
+  description: "Read about Frontend development and Design ",
   author: {
     name: "Pol",
     website: "https://polgubau.com",
@@ -11,7 +11,7 @@ export const metadata = {
   },
 
   links: {
-    github: "",
+    github: "https://github.com/PolGubau/codedByPol",
   },
 
   siteUrl: "https://blog.polgubau.com",

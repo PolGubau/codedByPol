@@ -5,24 +5,34 @@ import PostBody from "../../components/post/post-body";
 import Header from "../../components/layout/header";
 import PostHeader from "../../components/post/post-header";
 import Layout from "../../components/layout/layout";
-import { getPostBySlug, getAllPosts, getAuthorById } from "../../lib/api";
+import {
+  getPostBySlug,
+  getAllPosts,
+  getAuthorById,
+  getAllAuthors,
+} from "../../lib/api";
 import PostTitle from "../../components/post/post-title";
 import Head from "next/head";
 import markdownToHtml from "../../lib/markdownToHtml";
 import type PostType from "../../interfaces/post";
 import Link from "next/link";
+import Author from "../../interfaces/author";
 
 type Props = {
-  post: PostType;
-  morePosts: PostType[];
-  preview?: boolean;
+  data: {
+    author: Author;
+    text: string;
+  };
+  preview: boolean;
 };
 
-export default function Post({ post, preview }: Props) {
+export default function Post({ data, preview }: Props) {
+  const { author, text } = data;
+
   const router = useRouter();
 
-  const title = `${post.title} | Next.js Blog Example`;
-  if (!router.isFallback && !post?.slug) {
+  const title = `${author.name} | Next.js Blog Example`;
+  if (!router.isFallback && !author?.id) {
     return <ErrorPage statusCode={404} />;
   }
   return (
@@ -39,16 +49,11 @@ export default function Post({ post, preview }: Props) {
             </Link>
             <article className="mb-32">
               <Head>
-                <title>{title} | CodedByPol </title>
-                <meta property="og:image" content={post.ogImage.url} />
+                <title>{author.name} | Author from CodedByPol </title>
+                <meta property="og:image" content={author.picture} />
               </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-              />{" "}
-              <PostBody content={post.content} />
+
+              <h1>{author.name}</h1>
             </article>
           </>
         )}
@@ -64,36 +69,28 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
-    "title",
-    "date",
-    "slug",
-    "author",
-    "content",
-    "ogImage",
-    "coverImage",
-  ]);
+  const { data, content } = getAuthorById(params.slug);
 
-  const content = await markdownToHtml(post.content ?? "");
+  const c = await markdownToHtml(content ?? "");
 
   return {
     props: {
-      post: {
-        ...post,
-        content,
+      data: {
+        author: data,
+        text: c,
       },
     },
   };
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(["slug"]);
+  const authors = getAllAuthors();
 
   return {
-    paths: posts.map((post) => {
+    paths: authors.map((post) => {
       return {
         params: {
-          slug: post.slug,
+          slug: post.id,
         },
       };
     }),

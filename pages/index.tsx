@@ -1,11 +1,13 @@
-import Container from "../components/container";
-import MoreStories from "../components/more-stories";
+import PostList from "../components/post-list";
 import FirstPost from "../components/first-post";
 import Intro from "../components/hero";
 import Layout from "../components/layout/layout";
 import { getAllPosts } from "../lib/api";
 import Head from "next/head";
 import Post from "../interfaces/post";
+import Link from "next/link";
+import Container from "../components/container";
+import { metadata } from "../lib/constants";
 
 type Props = {
   allPosts: Post[];
@@ -18,7 +20,7 @@ export default function Index({ allPosts }: Props) {
     <>
       <Layout>
         <Head>
-          <title>{`Blog`}</title>
+          <title>{`${metadata.title} | Personal Blog and Code courses, React, SEO, Frontend development`}</title>
         </Head>
         <Container>
           <Intro />
@@ -31,7 +33,10 @@ export default function Index({ allPosts }: Props) {
               excerpt={heroPost.excerpt}
             />
           )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          {morePosts.length > 0 && <PostList posts={morePosts} />}
+          <Link href="/posts" className="text-blue-500 hover:underline">
+            All posts
+          </Link>
         </Container>
       </Layout>
     </>
