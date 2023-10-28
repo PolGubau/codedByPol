@@ -20,8 +20,7 @@ const PostHeader = ({ title, coverImage, date, author }: Props) => {
         <Link
           as={`/authors/${author.data.id}`}
           href="/authors/[slug]"
-          aria-label={author.data.name}
-        >
+         >
           <Avatar name={author.data.name} picture={author.data.picture} />
         </Link>
       </div>
@@ -33,8 +32,7 @@ const PostHeader = ({ title, coverImage, date, author }: Props) => {
           <Link
             as={`/authors/${author.data.id}`}
             href="/authors/[slug]"
-            aria-label={author.data.name}
-          >
+           >
             <Avatar name={author.data.name} picture={author.data.picture} />
           </Link>
         </div>

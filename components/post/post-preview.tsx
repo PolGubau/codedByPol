@@ -39,11 +39,7 @@ const PostPreview = ({
 
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
 
-      <Link
-        as={`/authors/${author.data.id}`}
-        href="/authors/[slug]"
-        aria-label={author.data.name}
-      >
+      <Link as={`/authors/${author.data.id}`} href="/authors/[slug]">
         <Avatar name={author.data.name} picture={author.data.picture} />
       </Link>
     </article>
