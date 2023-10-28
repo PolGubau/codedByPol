@@ -90,7 +90,10 @@ export default function Post({ data, preview }: Props) {
                     </h3>
                     <ul className="flex gap-2 text-center justify-center md:justify-start">
                       {author.tags.map((tag) => (
-                        <li className="px-2 py-1 rounded-xl bg-slate-200">
+                        <li
+                          key={tag}
+                          className="px-2 py-1 rounded-xl bg-slate-200"
+                        >
                           #{tag}
                         </li>
                       ))}
@@ -106,6 +109,7 @@ export default function Post({ data, preview }: Props) {
                     <ul className="flex gap-2 text-center justify-center md:justify-start">
                       {author.techStack.map((tag) => (
                         <li
+                          key={tag}
                           className="px-2 py-1 rounded-full "
                           style={{
                             backgroundColor: author.color + "70",

@@ -1,8 +1,7 @@
 import Container from "../../components/container";
 import PostList from "../../components/post-list";
-import Intro from "../../components/hero";
 import Layout from "../../components/layout/layout";
-import { getAllPosts, getAuthorById } from "../../lib/api";
+import { getAllPosts } from "../../lib/api";
 import Head from "next/head";
 import Post from "../../interfaces/post";
 import Header from "../../components/layout/header";
@@ -31,6 +30,7 @@ export const getStaticProps = async () => {
   const allPosts = getAllPosts([
     "title",
     "date",
+    "tags",
     "slug",
     "author",
     "coverImage",

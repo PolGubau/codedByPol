@@ -5,13 +5,17 @@ import Image from "next/image";
 type Props = {
   title: string;
   src: string;
-  slug?: string;
+  slug: string;
+};
+
+export const routeToImages = (slug: string) => {
+  return `/assets/blog/posts/${slug}/`;
 };
 
 const CoverImage = ({ title, src, slug }: Props) => {
   const image = (
     <Image
-      src={src}
+      src={routeToImages(slug) + src}
       loader={({ src, width, quality }) => {
         return `${src}?w=${width}&q=${quality || 75}`;
       }}

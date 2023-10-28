@@ -64,3 +64,7 @@
 .markdown table tr:nth-child(odd) {
   @apply bg-gray-200;
 }
+
+.markdown pre {
+  @apply bg-gray-800 text-gray-100 rounded-xl p-4 my-2 overflow-x-auto;
+}

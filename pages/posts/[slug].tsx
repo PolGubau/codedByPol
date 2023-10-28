@@ -5,12 +5,12 @@ import PostBody from "../../components/post/post-body";
 import Header from "../../components/layout/header";
 import PostHeader from "../../components/post/post-header";
 import Layout from "../../components/layout/layout";
-import { getPostBySlug, getAllPosts, getAuthorById } from "../../lib/api";
+import { getPostBySlug, getAllPosts } from "../../lib/api";
 import PostTitle from "../../components/post/post-title";
 import Head from "next/head";
 import markdownToHtml from "../../lib/markdownToHtml";
 import type PostType from "../../interfaces/post";
-import Link from "next/link";
+import { metadata } from "../../lib/constants";
 
 type Props = {
   post: PostType;
@@ -21,7 +21,7 @@ type Props = {
 export default function Post({ post, preview }: Props) {
   const router = useRouter();
 
-  const title = `${post.title} | Next.js Blog Example`;
+  const title = `${post.title} | ${metadata.title}`;
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
@@ -36,10 +36,12 @@ export default function Post({ post, preview }: Props) {
           <>
             <article className="mb-32">
               <Head>
-                <title>{title} | CodedByPol </title>
+                <title>{title} </title>
                 <meta property="og:title" content={title} />
                 <meta property="og:description" content={post.excerpt} />
                 <meta property="description" content={post.excerpt} />
+                <meta property="og:image" content={post.coverImage} />
+                <meta property="tags" content={post.tags?.join(", ")} />
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
               <PostHeader
@@ -47,7 +49,8 @@ export default function Post({ post, preview }: Props) {
                 coverImage={post.coverImage}
                 date={post.date}
                 author={post.author}
-              />{" "}
+                slug={post.slug}
+              />
               <PostBody content={post.content} />
             </article>
           </>

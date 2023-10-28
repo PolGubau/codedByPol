@@ -4,6 +4,7 @@ type Props = {
 };
 
 const PostBody = ({ content, color = "#fff176" }: Props) => {
+  console.log(content);
   return (
     <div
       className={`markdown  `}

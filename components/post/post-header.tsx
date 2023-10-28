@@ -9,30 +9,25 @@ type Props = {
   title: string;
   coverImage: string;
   date: string;
+  slug: string;
   author: { data: Author; text: string };
 };
 
-const PostHeader = ({ title, coverImage, date, author }: Props) => {
+const PostHeader = ({ title, coverImage, date, author, slug }: Props) => {
   return (
     <>
       <PostTitle>{title}</PostTitle>
       <div className="hidden md:block md:mb-12">
-        <Link
-          as={`/authors/${author.data.id}`}
-          href="/authors/[slug]"
-         >
+        <Link as={`/authors/${author.data.id}`} href="/authors/[slug]">
           <Avatar name={author.data.name} picture={author.data.picture} />
         </Link>
       </div>
       <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} src={coverImage} />
+        <CoverImage title={title} src={coverImage} slug={slug} />
       </div>
       <div className="max-w-2xl mx-auto">
         <div className="block md:hidden mb-6">
-          <Link
-            as={`/authors/${author.data.id}`}
-            href="/authors/[slug]"
-           >
+          <Link as={`/authors/${author.data.id}`} href="/authors/[slug]">
             <Avatar name={author.data.name} picture={author.data.picture} />
           </Link>
         </div>

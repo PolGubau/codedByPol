@@ -15,7 +15,6 @@ const Avatar = ({ name, picture }: Props) => {
         loader={({ src, width, quality }) => {
           return `${src}?w=${width}&q=${quality || 75}`;
         }}
-        layout="fixed"
         width={60}
         height={60}
         src={picture}
