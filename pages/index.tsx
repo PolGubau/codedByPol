@@ -54,13 +54,13 @@ export default function Index({ allPosts }: Props) {
           <div className="flex gap-4 mb-8 items-center justify-center">
             <Link
               href="/posts"
-              className="text-orange-600 hover:underline bg-orange-200 hover:bg-orange-300 transition-all px-3 py-2 rounded-md text-xl"
+              className="text-orange-900 hover:underline bg-orange-200 hover:bg-orange-300 transition-all px-3 py-2 rounded-md text-xl"
             >
               All posts
             </Link>
             <Link
               href="/authors"
-              className="text-yellow-600 hover:underline bg-yellow-200 hover:bg-yellow-300 transition-all px-3 py-2 rounded-md text-xl"
+              className="text-yellow-900 hover:underline bg-yellow-200 hover:bg-yellow-300 transition-all px-3 py-2 rounded-md text-xl"
             >
               Our creators
             </Link>
