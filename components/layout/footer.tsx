@@ -11,7 +11,7 @@ const Footer = () => {
           {metadata.title}
         </h3>
         <p>
-          With 🖤 and Nextjs,{" "}
+          With 🖤{" "}
           <a href={metadata.author.website}> By {metadata.author.fullName}</a>
         </p>
         <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">

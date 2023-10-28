@@ -3,7 +3,7 @@ import { metadata } from "../lib/constants";
 
 const Intro = () => {
   return (
-    <section className="flex-col   flex items-center md:items-start  my-16 ">
+    <section className="flex-col flex items-center md:items-start mb-20 mt-8 ">
       <h1 className="text-6xl md:text-7xl font-bold tracking-tighter leading-tight md:pr-8">
         <Link href="/" className="hover:underline">
           {metadata.title}
