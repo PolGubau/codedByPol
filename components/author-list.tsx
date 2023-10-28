@@ -37,8 +37,7 @@ const AuthorList = ({ authors, label = "Our Creators" }: Props) => {
                     loader={({ src, width, quality }) => {
                       return `${src}?w=${width}&q=${quality || 75}`;
                     }}
-                    lazyRoot="lazy-root"
-                    layout="intrinsic"
+                     layout="intrinsic"
                     title={a.name}
                     src={a.picture}
                     alt={a.name}

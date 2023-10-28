@@ -27,6 +27,7 @@ export default function Index({ allPosts }: Props) {
 
           <meta name="description" content={metadata.description} />
 
+          <link rel="manifest" href="/favicon/manifest.json" />
           <meta property="og:url" content={metadata.siteUrl} />
           <meta property="og:type" content="website" />
           <meta

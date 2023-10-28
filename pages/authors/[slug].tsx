@@ -66,7 +66,6 @@ export default function Post({ data, preview }: Props) {
                     loader={({ src, width, quality }) => {
                       return `${src}?w=${width}&q=${quality || 75}`;
                     }}
-                    lazyRoot="lazy-root"
                     layout="intrinsic"
                     title={author.name}
                     src={author.picture}

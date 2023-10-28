@@ -15,7 +15,6 @@ const Avatar = ({ name, picture }: Props) => {
         loader={({ src, width, quality }) => {
           return `${src}?w=${width}&q=${quality || 75}`;
         }}
-        lazyRoot="lazy-root"
         layout="fixed"
         width={60}
         height={60}

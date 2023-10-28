@@ -15,7 +15,6 @@ const CoverImage = ({ title, src, slug }: Props) => {
       loader={({ src, width, quality }) => {
         return `${src}?w=${width}&q=${quality || 75}`;
       }}
-      lazyRoot="lazy-root"
       layout="responsive"
       priority
       lang="en"
