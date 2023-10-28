@@ -69,7 +69,7 @@ export default function Post({ data, preview }: Props) {
                     layout="intrinsic"
                     title={author.name}
                     src={author.picture}
-                    alt={author.name}
+                    alt={`A picture of ${author.name}`}
                     width={200}
                     height={200}
                     className="rounded-none -bottom-5 md:bottom-0 h-50 aspect-square absolute hover:bottom-0 transition-all group-hover:bottom-0 md:group-hover:bottom-0"
