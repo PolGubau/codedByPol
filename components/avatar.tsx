@@ -9,6 +9,14 @@ const Avatar = ({ name, picture }: Props) => {
   return (
     <div className="flex items-center hover:underline cursor-pointer group w-fit">
       <Image
+        title={`Avatar of ${name}`}
+        loading="lazy"
+        lang="en"
+        loader={({ src, width, quality }) => {
+          return `${src}?w=${width}&q=${quality || 75}`;
+        }}
+        lazyRoot="lazy-root"
+        layout="fixed"
         width={60}
         height={60}
         src={picture}

@@ -34,6 +34,21 @@ const Meta = () => {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta name="description" content={metadata.description} />
       <meta property="og:image" content={metadata.homeOgImage} />
+      <meta property="og:description" content={metadata.description} />
+      <meta placeholder="tags" content={metadata.tags.join(", ")} />
+      <meta property="og:title" content={metadata.title} />
+      <meta property="og:url" content={metadata.siteUrl} />
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content={metadata.author.twitter} />
+      <meta name="twitter:creator" content={metadata.author.twitter} />
+      <meta name="twitter:title" content={metadata.title} />
+      <meta name="twitter:description" content={metadata.description} />
+
+      <meta name="twitter:image" content={metadata.homeOgImage} />
+      <meta name="twitter:image:alt" content={metadata.title} />
+      
+      
     </Head>
   );
 };

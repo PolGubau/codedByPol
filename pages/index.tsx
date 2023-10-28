@@ -24,6 +24,18 @@ export default function Index({ allPosts }: Props) {
       <Layout>
         <Head>
           <title>{`${metadata.title} | Personal Blog and Code courses, React, SEO, Frontend development`}</title>
+
+          <meta name="description" content={metadata.description} />
+
+          <meta property="og:url" content={metadata.siteUrl} />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:title"
+            content={`${metadata.title} | Personal Blog and Code courses, React, SEO, Frontend development`}
+          />
+          <meta property="og:description" content={metadata.description} />
+          <meta property="og:image" content={metadata.homeOgImage} />
+          <meta property="tags" content={metadata.tags.join(", ")} />
         </Head>
         <Container>
           <Intro />

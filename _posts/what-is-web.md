@@ -1,11 +1,11 @@
 ---
 title: "What is the web?"
 excerpt: "Exploring the fundamentals of the World Wide Web. Understanding the basics, how it works, the role of hyperlinks, and the evolution of the web."
-coverImage: "/assets/blog/dynamic-routing/cover.jpg"
+coverImage: "/assets/blog/posts/whatIsweb/cover.webp"
 date: "2023-10-27T10:00:00.000Z"
 author: polgubau
 ogImage:
-  url: "/assets/blog/dynamic-routing/cover.jpg"
+  url: "/assets/blog/posts/whatIsweb/cover.webp"
 ---
 
 The World Wide Web, often referred to as the "web," is a vast and interconnected network of information and resources that has become an integral part of our daily lives. In this post, we will explore the fundamental concepts of the web and how it functions.

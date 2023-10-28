@@ -6,9 +6,28 @@ export const metadata = {
     website: "https://polgubau.com",
     fullName: "Pol Gubau Amores",
     picture: "/assets/blog/authors/pol.jpg",
-    twitter: "https://twitter.com/aledev_",
+    twitter: "https://twitter.com/PolGubau",
     github: "http://github.com/polgubau",
   },
+
+  tags: [
+    "React",
+    "Next.js",
+    "Gatsby",
+    "Javascript",
+    "Typescript",
+    "CSS",
+    "Pol Gubau Amores",
+    "Frontend",
+    "Pol",
+    "Gubau",
+    "Amores",
+    "Web",
+    "Developer",
+    "Designer",
+    "UI",
+    "UX",
+  ],
 
   links: {
     github: "https://github.com/PolGubau/codedByPol",
@@ -16,5 +35,5 @@ export const metadata = {
 
   siteUrl: "https://blog.polgubau.com",
 
-  homeOgImage: "/assets/blog/authors/pol.jpg",
+  homeOgImage: "/assets/thumbnail/cover.png",
 };

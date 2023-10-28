@@ -8,7 +8,7 @@ const Footer = () => {
     items-center justify-center pt-20 pb-20 md:pb-28  md:flex-row md:justify-between max-w-5xl md:px-8"
       >
         <h3 className="text-4xl lg:text-[2.5rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-4 lg:mb-0 lg:pr-4 lg:w-1/2">
-          {metadata.title}
+          The {metadata.title} Blog
         </h3>
         <p>
           With 🖤{" "}
