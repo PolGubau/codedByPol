@@ -21,6 +21,7 @@ const AuthorList = ({ authors, label = "Our Creators" }: Props) => {
           const slug = a.id;
           return (
             <Link
+              key={a.id}
               href={`/authors/${slug}`}
               as={`/authors/${slug}`}
               className="h-full"
@@ -37,10 +38,10 @@ const AuthorList = ({ authors, label = "Our Creators" }: Props) => {
                     loader={({ src, width, quality }) => {
                       return `${src}?w=${width}&q=${quality || 75}`;
                     }}
-                     layout="intrinsic"
+                    layout="intrinsic"
                     title={a.name}
                     src={a.picture}
-                    alt={a.name}
+                    alt={`A picture of ${a.name}`}
                     width={200}
                     height={200}
                     className="rounded-none -bottom-5 h-50 aspect-square  absolute hover:bottom-0 transition-all group-hover:bottom-0"
@@ -54,6 +55,7 @@ const AuthorList = ({ authors, label = "Our Creators" }: Props) => {
                   <ul className="flex gap-2 flex-wrap justify-center">
                     {a.techStack.map((t) => (
                       <li
+                        key={t}
                         className="bg-gray-400 px-3 py-1 rounded-full"
                         style={{
                           backgroundColor: a.color,
