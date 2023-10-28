@@ -12,7 +12,9 @@ const Footer = () => {
         </h3>
         <p>
           With 🖤{" "}
-          <a href={metadata.author.website}> By {metadata.author.fullName}</a>
+          <strong>
+            <a href={metadata.author.website}> By {metadata.author.fullName}</a>
+          </strong>
         </p>
         <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
           <a
