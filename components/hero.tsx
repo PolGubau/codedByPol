@@ -9,9 +9,9 @@ const Intro = () => {
           {metadata.title}
         </Link>
       </h1>
-      <h4 className="text-center opacity-75 md:text-left text-xl mt-5 md:pl-2">
+      <h2 className="text-center opacity-75 md:text-left text-xl mt-5 md:pl-2">
         {metadata.description}
-      </h4>
+      </h2>
     </section>
   );
 };
