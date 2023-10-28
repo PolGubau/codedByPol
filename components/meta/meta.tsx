@@ -7,29 +7,25 @@ const Meta = () => {
       <link
         rel="apple-touch-icon"
         sizes="180x180"
-        href="/favicon/apple-touch-icon.png"
+        href="apple-touch-icon.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="32x32"
-        href="/favicon/favicon-32x32.png"
+        href="favicon-32x32.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href="/favicon/favicon-16x16.png"
+        href="favicon-16x16.png"
       />
-      <link rel="manifest" href="/favicon/manifest.json" />
-      <link
-        rel="mask-icon"
-        href="/favicon/safari-pinned-tab.svg"
-        color="#131313"
-      />
-      <link rel="shortcut icon" href="/favicon/favicon.ico" />
+      <link rel="manifest" href="manifest.json" />
+      <link rel="mask-icon" href="safari-pinned-tab.svg" color="#131313" />
+      <link rel="shortcut icon" href="favicon.ico" />
       <meta name="msapplication-TileColor" content="#ff4" />
-      <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+      <meta name="msapplication-config" content="browserconfig.xml" />
       <meta name="theme-color" content="#131313" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
