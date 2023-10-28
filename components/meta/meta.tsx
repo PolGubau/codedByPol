@@ -21,7 +21,7 @@ const Meta = () => {
         sizes="16x16"
         href="/favicon/favicon-16x16.png"
       />
-      <link rel="manifest" href="/favicon/site.webmanifest" />
+      <link rel="manifest" href="/favicon/manifest.json" />
       <link
         rel="mask-icon"
         href="/favicon/safari-pinned-tab.svg"
