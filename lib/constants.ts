@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Coded by Pol",
+  title: "CodedByPol",
   description: "Read about Frontend development and Design",
   author: {
     name: "Pol",
