@@ -34,7 +34,10 @@
 }
 
 .markdown li {
-  @apply my-2;
+  @apply mt-2 mb-6;
+}
+.markdown li > * {
+  @apply inline;
 }
 
 .markdown blockquote {

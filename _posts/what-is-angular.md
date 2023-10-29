@@ -1,9 +1,9 @@
 ---
-title: "What is Vue?"
-excerpt: "Vue.js is a popular JavaScript framework for building user interfaces. It is a progressive framework, meaning that it can be used for both small and large-scale projects."
+title: "What is Angular?"
+excerpt: "Angular is a JavaScript framework for building complete apps and websites. It is maintained by Google and is used by many companies, including Netflix, PayPal, and Upwork."
 
 coverImage: "cover.png"
-date: "2023-10-28T10:03:00.000Z"
+date: "2023-10-28T10:02:00.000Z"
 author: polgubau
 tags: ["vue", "javascript", "web"]
 ogImage:
@@ -13,6 +13,8 @@ ogImage:
 ## An Introduction to Vue.js
 
 Vue.js is a popular JavaScript framework for building user interfaces. It is a progressive framework, meaning that it can be used for both small and large-scale projects. Vue.js is known for its simplicity, flexibility, and ease of use.
+
+<!-- ![Vue cover, a thumbnail for the post](/assets/blog/posts/what-is-vue/cover.png "Vue cover") -->
 
 ## Getting Started with Vue.js
 
